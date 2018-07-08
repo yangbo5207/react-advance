@@ -1,5 +1,6 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
+var fs = require('fs-extra');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
@@ -28,12 +29,27 @@ _.each(paths.entries, (file, name) => {
   entries[name] = [file].concat('react-dev-utils/webpackHotDevClient')
 })
 
-var injects = [];
+var injects = [
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor',
+    minChunks: Infinity
+  })
+];
+
+var matchScriptStylePattern = /<\!--\s*script:\s*([\w]+)(?:\.jsx?)?\s*-->/g;
+
 paths.pageEntries.forEach(name => {
   var chunks = ['vendor'];
   var file = path.resolve(paths.public, name + '.html');
   if (paths.entries[name]) {
     chunks.push(name);
+  }
+
+  var contents = fs.readFileSync(file);
+  var matches;
+
+  while ((matches = matchScriptStylePattern.exec(contents))) {
+    chunks.push(matches[1]);
   }
 
   injects.push(
@@ -52,7 +68,7 @@ paths.pageEntries.forEach(name => {
 module.exports = {
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
-  devtool: 'cheap-module-source-map',
+  devtool: 'eval',
   // These are the "entry points" to our application.
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
@@ -60,7 +76,6 @@ module.exports = {
     vendor: [
       require.resolve('react-dev-utils/webpackHotDevClient'),
       require.resolve('./polyfills'),
-      paths.appIndexJs,
     ].concat(pkg.vendor || [])
   }),
 
@@ -222,11 +237,6 @@ module.exports = {
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In development, this will be an empty string.
     new InterpolateHtmlPlugin(env.raw),
-    // Generates an `index.html` file with the <script> injected.
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: paths.appHtml,
-    }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
     // Makes some environment variables available to the JS code, for example:
