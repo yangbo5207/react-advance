@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  background-color: #FFF;
+  padding: 10px;
+  height: 1000px;
+  
+  background-color: #F2F2F2;
+
+  .container {
+    margin-top: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #FFF;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .header {
+    height: 45px;
+    background-color: #F9F9Ff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+  }
+
+  img {
+    display: block;
+  }
+
+  .left {
+    display: flex;
+    align-items: center
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    margin-right: 6px;
+  }
+
+  .nickname {
+    font-size: 13px;
+    color: #333
+  }
+
+  .right {
+    font-size: 12px;
+    color: #666
+  }
+
+  .content {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  .thumb {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .title {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #FFF;
+    font-weight: bold;
+  }
+
+  .desc {
+    padding: 20px 15px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
