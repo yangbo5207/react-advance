@@ -3,14 +3,29 @@ import ReactDOM from 'react-dom';
 import Icon from 'components/Icon';
 import { icons } from 'components/Icon/config';
 
-console.log('xxx');
+const container = {
+  display: 'flex',
+  maxWidth: '300px',
+  margin: 'auto',
+  justifyContent: 'space-around',
+  flexWrap: 'wrap'
+}
+
+const itemContainer = {
+  width: '40px',
+  height: '40px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div style={container}>
+        <Icon type="add" spin />
         {icons.map((item, i) => (
-          <div key={i}>
+          <div key={i} style={itemContainer}>
             <Icon type={item} />
           </div>
         ))}

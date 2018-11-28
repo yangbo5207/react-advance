@@ -24,7 +24,7 @@ const Icon = (props = defaultProps) => {
   const _style = { ...style, color };
 
   return (
-    <i classnames={cls} {...other} style={_style} /> 
+    <i className={cls} {...other} style={_style} /> 
   )
 }
 

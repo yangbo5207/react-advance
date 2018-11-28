@@ -15,11 +15,12 @@
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
+  display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-add:before { content: "\e65b" }
+.icon-add::before { content: '\e65b' }
 .icon-step:before { content: '\e65a'; }
 .icon-complete:before { content: '\e658'; }
 .icon-clock:before { content: '\e67d'; }
