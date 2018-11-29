@@ -34,7 +34,7 @@ class Button extends Component {
       'button-clicked': clicked,
       [`button-${type}`]: true,
       'button-ghost': ghost,
-      'button-disabled': icon === 'loading' || loading
+      'button-disabled': icon === 'loading' || loading,
     }, className);
 
     let iconNode = null;
