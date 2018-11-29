@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { omit } from 'lodash';
 import './style.scss';
 
 class Button extends Component {

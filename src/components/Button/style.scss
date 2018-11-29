@@ -22,33 +22,57 @@
     margin-right: 8px;
   }
 
+  &-default {
+    &:hover {
+      color: #108ee9;
+      border-color: #108ee9;
+    }
+    &:active {
+      color: red;
+      border-color: red;
+    }
+  }
+
   &-primary {
     background-color: #108ee9;
     color: #FFF;
     border: 1px solid #108ee9;
-
-    &::after {
-      border-width: 0;
-    }
-    &::hover {
+    &:hover {
       background-color: #49a9ee;
       border-color: #49a9ee;
     }
-    &::active {
+    &:active {
       background-color: #0e77ca;
-      border-color: #0e77ca;
+      border-color: #0e77ca; 
     }
   }
 
   &-warning {
-    background-color:orange;
+    background-color:#FFB90F;
     color: #fff;
-    border: 1px solid orange;
+    border: 1px solid #FFB90F;
+    &:hover {
+      background-color: #FFC1C1;
+      border-color: #FFC1C1;
+    }
+    &:active {
+      background-color: #FFA54F;
+      border-color: #FFA54F;
+    }
   }
 
   &-danger {
     background-color: #f04134;
     color: #fff;
-    border: 1px solid #f04134;    
+    border: 1px solid #f04134;  
+    
+    &:hover {
+      background-color: #f46e65;
+      border-color: #f46e65;
+    }
+    &:active {
+      background-color: #d73435;
+      border-color: #d73435;
+    }
   }
 }
