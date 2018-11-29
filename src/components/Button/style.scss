@@ -1,0 +1,54 @@
+.button {
+  margin: 6px 4px;
+  cursor: pointer;
+  line-height: 1.6;
+  padding: 4px 15px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  color: #404040;
+  transition: 0.2s;
+  position: relative;
+  outline: none;
+
+  &::after {
+    border-width: 0;
+  }
+
+  i + span {
+    margin-left: 8px;
+  }
+
+  span + i {
+    margin-right: 8px;
+  }
+
+  &-primary {
+    background-color: #108ee9;
+    color: #FFF;
+    border: 1px solid #108ee9;
+
+    &::after {
+      border-width: 0;
+    }
+    &::hover {
+      background-color: #49a9ee;
+      border-color: #49a9ee;
+    }
+    &::active {
+      background-color: #0e77ca;
+      border-color: #0e77ca;
+    }
+  }
+
+  &-warning {
+    background-color:orange;
+    color: #fff;
+    border: 1px solid orange;
+  }
+
+  &-danger {
+    background-color: #f04134;
+    color: #fff;
+    border: 1px solid #f04134;    
+  }
+}

@@ -1,3 +1,6 @@
+/**
+ * Icon组件demo展示
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Icon from 'components/Icon';
