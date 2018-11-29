@@ -15,6 +15,13 @@ class RA10 extends Component {
           <Button type="warning">warning</Button>
           <Button type="danger">danger</Button>
         </div>
+
+        <div className="session">
+          <Button icon="add" type="primary">新增</Button>
+          <Button icon="check" type="primary">选择</Button>
+          <Button icon="count" type="primary">计算</Button>
+          <Button icon="volume" type="primary">播放</Button>
+        </div>
       </div>
     )
   }

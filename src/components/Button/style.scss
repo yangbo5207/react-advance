@@ -3,6 +3,7 @@
   cursor: pointer;
   line-height: 1.6;
   padding: 4px 15px;
+  font-size: 14px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
   color: #404040;
@@ -31,6 +32,9 @@
       color: red;
       border-color: red;
     }
+    &:after {
+      border: 0 solid red;
+    }
   }
 
   &-primary {
@@ -45,6 +49,9 @@
       background-color: #0e77ca;
       border-color: #0e77ca; 
     }
+    &:after {
+      border: 0 solid #0e77ca;
+    }
   }
 
   &-warning {
@@ -58,6 +65,9 @@
     &:active {
       background-color: #FFA54F;
       border-color: #FFA54F;
+    }
+    &:after {
+      border: 0 solid #FFA54F;
     }
   }
 
@@ -74,6 +84,9 @@
       background-color: #d73435;
       border-color: #d73435;
     }
+    &:after {
+      border: 0 solid #d73435;
+    }
   }
 
   &-clicked {
@@ -86,9 +99,9 @@
       bottom: -1px;
       right: -1px;
       border-radius: inherit;
-      border: 0 solid #108ee9;
-      opacity: 0.4;
+      opacity: 0.5;
       animation: buttonEffect .4s;
+      border-radius: 4px;
       display: block;
     }
   }

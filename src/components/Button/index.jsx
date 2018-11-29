@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import Icon from '../Icon';
 import './style.scss';
 
 class Button extends Component {
@@ -12,7 +13,6 @@ class Button extends Component {
   }
 
   clickHandler = (e) => {
-    console.log('xxxx');
     const { onClick } = this.props;
     this.setState({
       clicked: true
@@ -27,23 +27,26 @@ class Button extends Component {
   }
 
   render() {
-    const { type, ghost, className, children, ...other } = this.props;
+    const { type, ghost, className, children, icon, ...other } = this.props;
     const { clicked } = this.state;
 
     console.log(clicked);
 
     const cls = classnames('button', {
+      'button-clicked': clicked,
       [`button-${type}`]: true,
       'button-ghost': ghost,
-      'button-clicked': clicked
     }, className);
+
+    const iconNode = icon ? <Icon type={icon} /> : null;
     return (
       <button 
         className={cls}
         onClick={this.clickHandler}
         {...other}
       >
-        {children}
+        {iconNode}
+        <span>{children}</span>
       </button>
     )
   }
