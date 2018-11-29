@@ -22,6 +22,10 @@ class RA10 extends Component {
           <Button icon="count" type="primary">计算</Button>
           <Button icon="volume" type="primary">播放</Button>
         </div>
+
+        <div className="session">
+          <Button icon="loading" type="primary">提交</Button>
+        </div>
       </div>
     )
   }

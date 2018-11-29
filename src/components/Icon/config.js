@@ -1,5 +1,5 @@
 export const icons = [
-  'add',
+  'loading',
   'step',
   'complete',
   'clock',

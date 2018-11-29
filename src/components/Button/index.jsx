@@ -27,22 +27,27 @@ class Button extends Component {
   }
 
   render() {
-    const { type, ghost, className, children, icon, ...other } = this.props;
+    const { type, ghost, className, children, icon, loading, ...other } = this.props;
     const { clicked } = this.state;
-
-    console.log(clicked);
 
     const cls = classnames('button', {
       'button-clicked': clicked,
       [`button-${type}`]: true,
       'button-ghost': ghost,
+      'button-disabled': icon === 'loading' || loading
     }, className);
 
-    const iconNode = icon ? <Icon type={icon} /> : null;
+    let iconNode = null;
+
+    if (icon) {
+      iconNode = <Icon type={icon} />;
+    }
+    
     return (
       <button 
         className={cls}
         onClick={this.clickHandler}
+        disabled={icon === 'loading' || loading}
         {...other}
       >
         {iconNode}

@@ -35,13 +35,17 @@
     &:after {
       border: 0 solid red;
     }
+    &:disabled {
+      color: #666;
+      border-color: #666;
+    }
   }
 
   &-primary {
     background-color: #108ee9;
     color: #FFF;
     border: 1px solid #108ee9;
-    &:hover {
+    &:hover, &:disabled {
       background-color: #49a9ee;
       border-color: #49a9ee;
     }
@@ -58,7 +62,7 @@
     background-color:#FFB90F;
     color: #fff;
     border: 1px solid #FFB90F;
-    &:hover {
+    &:hover, &:disabled {
       background-color: #FFC1C1;
       border-color: #FFC1C1;
     }
@@ -76,7 +80,7 @@
     color: #fff;
     border: 1px solid #f04134;  
     
-    &:hover {
+    &:hover, &:disabled {
       background-color: #f46e65;
       border-color: #f46e65;
     }
